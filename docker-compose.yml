@@ -1,0 +1,103 @@
+version: "3.6"
+
+x-volumes:
+  &php-volume
+  volumes:
+    - ./composer.json:/var/www/html/composer.json:cached
+    - ./composer.lock:/var/www/html/composer.lock:cached
+    - ./symfony.lock:/var/www/html/symfony.lock:cached
+    - ./phpunit.xml.dist:/var/www/html/phpunit.xml.dist:cached
+    - ./.php_cs.dist:/var/www/html/.php_cs.dist:cached
+    - ./.env:/var/www/html/.env:cached
+    - ./.env.dist:/var/www/html/.env.dist:cached
+    - ./public:/var/www/html/public:cached
+    - ./config:/var/www/html/config:cached
+    - ./src:/var/www/html/src:cached
+    - ./tests:/var/www/html/tests:cached
+    - ./bin:/var/www/html/bin:cached
+    - composervendor:/var/www/html/vendor:nocopy
+    - composercache:/root/.composer/cache:nocopy
+    - composerglobalvendor:/root/.composer/vendor:nocopy
+    - phpdata:/var/www/html/var:nocopy
+
+services:
+  cli:
+    build:
+      context: docker/php
+      args:
+        - PHP_SAPI=cli
+        - PHP_VERSION=7.2
+    restart: "no"
+    <<: *php-volume
+
+  fpm:
+    build:
+      context: docker/php
+      args:
+        - PHP_SAPI=fpm
+        - PHP_VERSION=7.2
+    networks:
+      backend:
+        aliases:
+          - php
+    expose:
+      - 9000
+    <<: *php-volume
+
+  #  example_command:
+  #    build:
+  #      context: docker/php
+  #      args:
+  #        - PHP_SAPI=cli
+  #        - PHP_VERSION=7.2
+  #    command: bin/console about
+  ##    restart: "no"
+  #    networks:
+  #      - backend
+  #    << : *php-volume
+
+  composer:
+    restart: "no"
+    build:
+      context: docker/php
+      args:
+        - PHP_SAPI=cli
+        - PHP_VERSION=7.2
+    command: composer install --ignore-platform-reqs
+    networks:
+      - backend
+    <<: *php-volume
+
+  nginx:
+    image: opentracing/nginx-opentracing
+    ports:
+      - 8880:80
+    networks:
+      - backend
+    depends_on:
+      - fpm
+    volumes:
+      - ./docker/nginx/jaeger-config.json:/etc/jaeger-config.json:ro
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./public:/var/www/html/public:cached
+
+  jaeger:
+    image: jaegertracing/all-in-one
+    environment:
+      - COLLECTOR_ZIPKIN_HTTP_PORT=9411
+    networks:
+      - backend
+    ports:
+      - 16686:16686
+
+volumes:
+  composervendor:
+  composercache:
+    external: true
+  composerglobalvendor:
+    external: true
+  phpdata:
+
+networks:
+  backend: {}

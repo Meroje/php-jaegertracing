@@ -1,0 +1,11 @@
+{
+  "service_name": "nginx",
+  "disabled": false,
+  "reporter": {
+    "logSpans": true,
+    "localAgentHostPort": "jaeger:6831"
+  },
+  "sampler": {
+    "type": "remote"
+  }
+}
