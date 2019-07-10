@@ -6,6 +6,9 @@
     "localAgentHostPort": "jaeger:6831"
   },
   "sampler": {
-    "type": "remote"
+    "type": "const",
+    "param": "1",
+    "samplingServerURL": "http://jaeger:5778",
+    "samplingRefreshInterval": 1
   }
 }

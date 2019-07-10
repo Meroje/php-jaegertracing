@@ -26,8 +26,10 @@ services:
       context: docker/php
       args:
         - PHP_SAPI=cli
-        - PHP_VERSION=7.2
+        - PHP_VERSION=7.3
     restart: "no"
+    networks:
+      - backend
     <<: *php-volume
 
   fpm:
@@ -35,7 +37,9 @@ services:
       context: docker/php
       args:
         - PHP_SAPI=fpm
-        - PHP_VERSION=7.2
+        - PHP_VERSION=7.3
+    environment:
+      PHP_IDE_CONFIG: serverName=localhost
     networks:
       backend:
         aliases:
@@ -49,7 +53,7 @@ services:
   #      context: docker/php
   #      args:
   #        - PHP_SAPI=cli
-  #        - PHP_VERSION=7.2
+  #        - PHP_VERSION=7.3
   #    command: bin/console about
   ##    restart: "no"
   #    networks:
@@ -62,7 +66,7 @@ services:
       context: docker/php
       args:
         - PHP_SAPI=cli
-        - PHP_VERSION=7.2
+        - PHP_VERSION=7.3
     command: composer install --ignore-platform-reqs
     networks:
       - backend
@@ -71,7 +75,7 @@ services:
   nginx:
     image: opentracing/nginx-opentracing
     ports:
-      - 8880:80
+      - "8880:80"
     networks:
       - backend
     depends_on:
@@ -84,12 +88,26 @@ services:
 
   jaeger:
     image: jaegertracing/all-in-one
+    command: ["--sampling.strategies-file=/strategies.json"]
     environment:
       - COLLECTOR_ZIPKIN_HTTP_PORT=9411
     networks:
       - backend
     ports:
-      - 16686:16686
+      - "16686:16686" # query
+      - "14269:14269" # admin (healthcheck, metrics)
+    volumes:
+      - ./docker/jaeger/strategies.json:/strategies.json:ro
+
+  prometheus:
+    image: prom/prometheus
+    networks:
+      - backend
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+#      - prometheusdata:/prometheus:nocopy
 
 volumes:
   composervendor:
@@ -98,6 +116,7 @@ volumes:
   composerglobalvendor:
     external: true
   phpdata:
+  prometheusdata:
 
 networks:
   backend: {}

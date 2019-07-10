@@ -1,0 +1,9 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: jaeger
+    dns_sd_configs:
+      - names: ["jaeger"]
+        type: "A"
+        port: 14269
