@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7742938551e660143de5b92267b103e4",
+    "content-hash": "762faaa1c37cb37c43a17c054c6af955",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -191,38 +191,37 @@
         },
         {
             "name": "jonahgeorge/jaeger-client-php",
-            "version": "v0.5.0",
+            "version": "v1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jonahgeorge/jaeger-client-php.git",
-                "reference": "5ccc70540701f6e8270aa4197c9a0903c7fac4c3"
+                "reference": "0a6a187d2afb401e1c618df29d2bca41146ddd7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jonahgeorge/jaeger-client-php/zipball/5ccc70540701f6e8270aa4197c9a0903c7fac4c3",
-                "reference": "5ccc70540701f6e8270aa4197c9a0903c7fac4c3",
+                "url": "https://api.github.com/repos/jonahgeorge/jaeger-client-php/zipball/0a6a187d2afb401e1c618df29d2bca41146ddd7b",
+                "reference": "0a6a187d2afb401e1c618df29d2bca41146ddd7b",
                 "shasum": ""
             },
             "require": {
                 "ext-sockets": "*",
-                "opentracing/opentracing": "^1@beta",
-                "packaged/thrift": "^0.10",
+                "opentracing/opentracing": "^1.0",
+                "packaged/thrift": "^0.13",
                 "phlib/base_convert": "^1.0",
-                "php": "^7.0",
+                "php": "^7.1 || ^8.0",
                 "psr/cache": "^1.0",
                 "psr/log": "^1.0"
             },
             "require-dev": {
                 "cache/array-adapter": "^1.0",
-                "phpunit/phpunit": "^6.4 || ^7",
+                "phpunit/phpunit": "^7 || ^8 || ^9",
                 "squizlabs/php_codesniffer": "3.*",
                 "symfony/polyfill-php73": "^1.10"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Jaeger\\": "src/Jaeger/",
-                    "Jaeger\\Tests\\": "tests/Jaeger/"
+                    "Jaeger\\": "src/Jaeger/"
                 },
                 "files": [
                     "./src/Jaeger/Constants.php"
@@ -253,7 +252,7 @@
                 "trace",
                 "tracing"
             ],
-            "time": "2019-12-26T10:53:44+00:00"
+            "time": "2021-04-28T10:01:45+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -382,24 +381,24 @@
         },
         {
             "name": "packaged/thrift",
-            "version": "0.10.0",
+            "version": "0.13.01",
             "source": {
                 "type": "git",
                 "url": "https://github.com/packaged/thrift.git",
-                "reference": "8af3f4c0388319f65a2522844d80d8ded60d211b"
+                "reference": "e3dbcfb79e319971d64264ffe9c340590cc8a228"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/packaged/thrift/zipball/8af3f4c0388319f65a2522844d80d8ded60d211b",
-                "reference": "8af3f4c0388319f65a2522844d80d8ded60d211b",
+                "url": "https://api.github.com/repos/packaged/thrift/zipball/e3dbcfb79e319971d64264ffe9c340590cc8a228",
+                "reference": "e3dbcfb79e319971d64264ffe9c340590cc8a228",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.0.0"
+                "php": "^5.5 || ^7.0 || ^8.0"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
+                "psr-4": {
                     "Thrift\\": "src/"
                 }
             },
@@ -413,7 +412,7 @@
                 "apache",
                 "thrift"
             ],
-            "time": "2017-06-05T07:52:51+00:00"
+            "time": "2021-01-25T13:32:28+00:00"
         },
         {
             "name": "phlib/base_convert",
@@ -648,5 +647,6 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
