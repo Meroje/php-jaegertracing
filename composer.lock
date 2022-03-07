@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7742938551e660143de5b92267b103e4",
+    "content-hash": "51b30e1da84d9294878342978e385520",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -98,12 +98,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "GuzzleHttp\\Promise\\": "src/"
-                },
                 "files": [
                     "src/functions_include.php"
-                ]
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\Promise\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -154,12 +154,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "GuzzleHttp\\Psr7\\": "src/"
-                },
                 "files": [
                     "src/functions_include.php"
-                ]
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -220,13 +220,13 @@
             },
             "type": "library",
             "autoload": {
+                "files": [
+                    "./src/Jaeger/Constants.php"
+                ],
                 "psr-4": {
                     "Jaeger\\": "src/Jaeger/",
                     "Jaeger\\Tests\\": "tests/Jaeger/"
-                },
-                "files": [
-                    "./src/Jaeger/Constants.php"
-                ]
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -338,34 +338,35 @@
         },
         {
             "name": "opentracing/opentracing",
-            "version": "1.0.0-beta6",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/opentracing/opentracing-php.git",
-                "reference": "42eb0e58c68054fd7c994b58831ea4cc207e8a0e"
+                "reference": "cd60bd1fb2a25280600bc74c7f9e0c13881a9116"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opentracing/opentracing-php/zipball/42eb0e58c68054fd7c994b58831ea4cc207e8a0e",
-                "reference": "42eb0e58c68054fd7c994b58831ea4cc207e8a0e",
+                "url": "https://api.github.com/repos/opentracing/opentracing-php/zipball/cd60bd1fb2a25280600bc74c7f9e0c13881a9116",
+                "reference": "cd60bd1fb2a25280600bc74c7f9e0c13881a9116",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1"
+                "php": "^7.1 || ^8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~7.5.8",
+                "phpstan/phpstan": "~0.12",
+                "phpunit/phpunit": "^7.0 || ^9.0",
                 "squizlabs/php_codesniffer": "3.*"
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "OpenTracing\\": "src/OpenTracing/"
-                },
                 "files": [
                     "src/OpenTracing/Tags.php",
                     "src/OpenTracing/Formats.php"
-                ]
+                ],
+                "psr-4": {
+                    "OpenTracing\\": "src/OpenTracing/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -378,7 +379,7 @@
                 }
             ],
             "description": "OpenTracing API for PHP",
-            "time": "2019-04-10T07:57:39+00:00"
+            "time": "2022-01-27T19:59:21+00:00"
         },
         {
             "name": "packaged/thrift",
@@ -438,12 +439,12 @@
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "Phlib\\": "src/"
-                },
                 "files": [
                     "src/base_convert.php"
-                ]
+                ],
+                "psr-4": {
+                    "Phlib\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "authors": [
@@ -642,11 +643,10 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "opentracing/opentracing": 10
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
