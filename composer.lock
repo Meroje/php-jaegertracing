@@ -98,12 +98,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "GuzzleHttp\\Promise\\": "src/"
-                },
                 "files": [
                     "src/functions_include.php"
-                ]
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\Promise\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -154,12 +154,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "GuzzleHttp\\Psr7\\": "src/"
-                },
                 "files": [
                     "src/functions_include.php"
-                ]
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -220,13 +220,13 @@
             },
             "type": "library",
             "autoload": {
+                "files": [
+                    "./src/Jaeger/Constants.php"
+                ],
                 "psr-4": {
                     "Jaeger\\": "src/Jaeger/",
                     "Jaeger\\Tests\\": "tests/Jaeger/"
-                },
-                "files": [
-                    "./src/Jaeger/Constants.php"
-                ]
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -359,13 +359,13 @@
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "OpenTracing\\": "src/OpenTracing/"
-                },
                 "files": [
                     "src/OpenTracing/Tags.php",
                     "src/OpenTracing/Formats.php"
-                ]
+                ],
+                "psr-4": {
+                    "OpenTracing\\": "src/OpenTracing/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -438,12 +438,12 @@
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "Phlib\\": "src/"
-                },
                 "files": [
                     "src/base_convert.php"
-                ]
+                ],
+                "psr-4": {
+                    "Phlib\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "authors": [
@@ -553,16 +553,16 @@
         },
         {
             "name": "psr/log",
-            "version": "1.0.2",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
-                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/d49695b909c3b7628b6289db5479a1c204601f11",
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11",
                 "shasum": ""
             },
             "require": {
@@ -571,7 +571,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -586,7 +586,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
+                    "homepage": "https://www.php-fig.org/"
                 }
             ],
             "description": "Common interface for logging libraries",
@@ -596,7 +596,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10T12:19:37+00:00"
+            "time": "2021-05-03T11:20:27+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -648,5 +648,6 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
