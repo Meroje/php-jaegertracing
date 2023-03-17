@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7742938551e660143de5b92267b103e4",
+    "content-hash": "6c8b976c3864f429a629887fdd3e5052",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -98,12 +98,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "GuzzleHttp\\Promise\\": "src/"
-                },
                 "files": [
                     "src/functions_include.php"
-                ]
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\Promise\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -154,12 +154,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "GuzzleHttp\\Psr7\\": "src/"
-                },
                 "files": [
                     "src/functions_include.php"
-                ]
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -191,16 +191,16 @@
         },
         {
             "name": "jonahgeorge/jaeger-client-php",
-            "version": "v0.5.0",
+            "version": "v0.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jonahgeorge/jaeger-client-php.git",
-                "reference": "5ccc70540701f6e8270aa4197c9a0903c7fac4c3"
+                "reference": "7f9498632c39898abdb0146cb3f05eb9d1e445ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jonahgeorge/jaeger-client-php/zipball/5ccc70540701f6e8270aa4197c9a0903c7fac4c3",
-                "reference": "5ccc70540701f6e8270aa4197c9a0903c7fac4c3",
+                "url": "https://api.github.com/repos/jonahgeorge/jaeger-client-php/zipball/7f9498632c39898abdb0146cb3f05eb9d1e445ce",
+                "reference": "7f9498632c39898abdb0146cb3f05eb9d1e445ce",
                 "shasum": ""
             },
             "require": {
@@ -220,13 +220,13 @@
             },
             "type": "library",
             "autoload": {
+                "files": [
+                    "./src/Jaeger/Constants.php"
+                ],
                 "psr-4": {
                     "Jaeger\\": "src/Jaeger/",
                     "Jaeger\\Tests\\": "tests/Jaeger/"
-                },
-                "files": [
-                    "./src/Jaeger/Constants.php"
-                ]
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -253,7 +253,7 @@
                 "trace",
                 "tracing"
             ],
-            "time": "2019-12-26T10:53:44+00:00"
+            "time": "2020-03-16T16:04:03+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -359,13 +359,13 @@
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "OpenTracing\\": "src/OpenTracing/"
-                },
                 "files": [
                     "src/OpenTracing/Tags.php",
                     "src/OpenTracing/Formats.php"
-                ]
+                ],
+                "psr-4": {
+                    "OpenTracing\\": "src/OpenTracing/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -438,12 +438,12 @@
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "Phlib\\": "src/"
-                },
                 "files": [
                     "src/base_convert.php"
-                ]
+                ],
+                "psr-4": {
+                    "Phlib\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "authors": [
@@ -648,5 +648,6 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
