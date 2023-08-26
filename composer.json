@@ -2,7 +2,7 @@
   "require": {
     "guzzlehttp/guzzle": "^6.3",
     "psr/log": "^1.0",
-    "jonahgeorge/jaeger-client-php": "0.5.0",
+    "jonahgeorge/jaeger-client-php": "1.5.0",
     "opentracing/opentracing":"1.0.0-beta6",
     "monolog/monolog": "^2.0.0"
   }
