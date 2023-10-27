@@ -98,12 +98,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "GuzzleHttp\\Promise\\": "src/"
-                },
                 "files": [
                     "src/functions_include.php"
-                ]
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\Promise\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -154,12 +154,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "GuzzleHttp\\Psr7\\": "src/"
-                },
                 "files": [
                     "src/functions_include.php"
-                ]
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -220,13 +220,13 @@
             },
             "type": "library",
             "autoload": {
+                "files": [
+                    "./src/Jaeger/Constants.php"
+                ],
                 "psr-4": {
                     "Jaeger\\": "src/Jaeger/",
                     "Jaeger\\Tests\\": "tests/Jaeger/"
-                },
-                "files": [
-                    "./src/Jaeger/Constants.php"
-                ]
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -359,13 +359,13 @@
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "OpenTracing\\": "src/OpenTracing/"
-                },
                 "files": [
                     "src/OpenTracing/Tags.php",
                     "src/OpenTracing/Formats.php"
-                ]
+                ],
+                "psr-4": {
+                    "OpenTracing\\": "src/OpenTracing/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -438,12 +438,12 @@
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "Phlib\\": "src/"
-                },
                 "files": [
                     "src/base_convert.php"
-                ]
+                ],
+                "psr-4": {
+                    "Phlib\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "authors": [
@@ -648,5 +648,6 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
